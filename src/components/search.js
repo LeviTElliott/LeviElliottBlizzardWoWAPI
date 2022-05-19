@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { AppContext } from './context-provider'
 import styled from 'styled-components'
 
-import logo from '../assets/edt_logo_white_.png'
+import logo from '../assets/WoWlogo.jpg'
 
 const Search = () => {
   const { setCharData, setData } = useContext(AppContext)
@@ -20,14 +20,14 @@ const Search = () => {
             method: 'POST'
         });
         const tokenData = await getToken.json();
-        const tokenBearer = process.env.access_token;
+        const tokenBearer = "USknbF5iOgiPCNOMe6fHi61QgboW1CgLkl";
         console.log(tokenBearer);
       const lookupResponse = await fetch(
-        `https://us.api.blizzard.com/profile/wow/character/${realm}/${char}/appearance`,
+        `https://us.api.blizzard.com/profile/wow/character/dalaran/xerotohero/appearance?namespace=profile-us&locale=en_US&access_token=USknbF5iOgiPCNOMe6fHi61QgboW1CgLkl`,
         {
             headers: {
                 Authorization: `Bearer ${tokenBearer}`,
-                'content-type': 'application/x-www-form-urlencoded'
+                'content-type': 'application/json'
             },
             method: 'GET'
         }
