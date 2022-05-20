@@ -7,7 +7,7 @@ import {
   capitalizeFirstLetter,
   factionId
 } from '../helpers'
-
+import toonshot from '../assets/spittinrage.jpg'
 import alliance from '../assets/alliance.png'
 import horde from '../assets/horde.png'
 
@@ -28,6 +28,9 @@ const Toon = ({ char }) => {
           <div className="column">
               <h3> Attributes </h3>
               <div className="stat-group">
+              <div className="stat">Character</div>
+                <div className="value"> {char.name}
+                </div>
                 <div className="stat">Realm</div>
                 <div className="value"> {char.realm.name}
                 </div>

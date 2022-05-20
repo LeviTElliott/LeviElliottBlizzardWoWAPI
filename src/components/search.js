@@ -4,11 +4,11 @@ import styled from 'styled-components'
 import { Route, Routes } from 'react-router-dom';
 import logo from '../assets/WoWlogo.jpg'
 
-const Search = () => {
+const Search = ({data, setData}) => {
   const { setCharData } = useContext(AppContext)
   const [char, setChar] = useState('')
   const [realm, setRealm] = useState('')
-  const [data, setData] = useState({});
+//   const [data, setData] = useState({});
   const disabled = char === '' || realm === ''
 
   const getChar = async () => {

@@ -8,8 +8,8 @@ const Character = ({ char, error }) => {
   return char ? (
     <CharacterStyle>
     <Toon char={char} />
-    <Stats char={char} />
-    <Equipment char={char} />
+    {/* <Stats char={char} /> */}
+    {/* <Equipment char={char} /> */}
     </CharacterStyle>
   ) : error ? (
     <CharacterStyle>
