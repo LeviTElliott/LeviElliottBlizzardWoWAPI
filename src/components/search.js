@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { AppContext } from './context-provider'
 import styled from 'styled-components'
-import { Route, Routes } from 'react-router-dom';
+// import { Route, Routes } from 'react-router-dom';
 import logo from '../assets/WoWlogo.jpg'
 
 const Search = ({data, setData}) => {
@@ -24,7 +24,7 @@ const Search = ({data, setData}) => {
         const tokenBearer = "USknbF5iOgiPCNOMe6fHi61QgboW1CgLkl";
         console.log(tokenBearer);
       const lookupResponse = await fetch(
-        `https://us.api.blizzard.com/profile/wow/character/${realm}/${char}?namespace=profile-us&locale=en_US&access_token=USknbF5iOgiPCNOMe6fHi61QgboW1CgLkl`,
+        `https://us.api.blizzard.com/profile/wow/character/${realm}/${char}?namespace=profile-us&locale=en_US&access_token=USY1lpLtw9146CT8dMiencAUHNh4mgDgqL`,
         {
             headers: {
                 Authorization: `Bearer ${tokenBearer}`,
@@ -39,7 +39,7 @@ const Search = ({data, setData}) => {
             setData(apiData)
         }
     } catch(error) {
-        console.log(error);
+        // console.log(error);
     };
   };
 

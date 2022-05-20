@@ -5,13 +5,14 @@ import Search from './search'
 import Character from './character'
 
 const App = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState();
   const { charData, error } = useContext(AppContext)
   console.log(charData)
   return (
     <main>
       <Search data={data} setData={setData}/>
-      <Character char={data} error={error} />
+      { data && <Character char={data} error={error} /> }
+      
     </main>
   )
 }

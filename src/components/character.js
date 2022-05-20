@@ -5,11 +5,12 @@ import Stats from './stats'
 import Equipment from './equipment'
 
 const Character = ({ char, error }) => {
+  console.log(char)
   return char ? (
     <CharacterStyle>
     <Toon char={char} />
-    {/* <Stats char={char} /> */}
-    {/* <Equipment char={char} /> */}
+    {/* <Stats char={char} />  */}
+    {/* <Equipment char={char} />  */}
     </CharacterStyle>
   ) : error ? (
     <CharacterStyle>
