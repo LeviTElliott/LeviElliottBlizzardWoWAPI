@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react'
 import { AppContext } from './context-provider'
 import styled from 'styled-components'
-
+import { Route, Routes } from 'react-router-dom';
 import logo from '../assets/WoWlogo.jpg'
 
 const Search = () => {
-  const { setCharData, setData } = useContext(AppContext)
+  const { setCharData } = useContext(AppContext)
   const [char, setChar] = useState('')
   const [realm, setRealm] = useState('')
+  const [data, setData] = useState({});
   const disabled = char === '' || realm === ''
 
   const getChar = async () => {
@@ -23,7 +24,7 @@ const Search = () => {
         const tokenBearer = "USknbF5iOgiPCNOMe6fHi61QgboW1CgLkl";
         console.log(tokenBearer);
       const lookupResponse = await fetch(
-        `https://us.api.blizzard.com/profile/wow/character/dalaran/xerotohero/appearance?namespace=profile-us&locale=en_US&access_token=USknbF5iOgiPCNOMe6fHi61QgboW1CgLkl`,
+        `https://us.api.blizzard.com/profile/wow/character/${realm}/${char}?namespace=profile-us&locale=en_US&access_token=USknbF5iOgiPCNOMe6fHi61QgboW1CgLkl`,
         {
             headers: {
                 Authorization: `Bearer ${tokenBearer}`,
@@ -35,8 +36,8 @@ const Search = () => {
         const apiData = await lookupResponse.json();
         console.log(apiData);
         if(apiData) {
-            setData(apiData);
-        };
+            setData(apiData)
+        }
     } catch(error) {
         console.log(error);
     };
