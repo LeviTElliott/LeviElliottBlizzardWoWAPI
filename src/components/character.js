@@ -1,16 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import Toon from './toondetail'
-import Stats from './stats'
-import Equipment from './equipment'
 
 const Character = ({ char, error }) => {
   console.log(char)
   return char ? (
     <CharacterStyle>
     <Toon char={char} />
-    {/* <Stats char={char} />  */}
-    {/* <Equipment char={char} />  */}
     </CharacterStyle>
   ) : error ? (
     <CharacterStyle>
