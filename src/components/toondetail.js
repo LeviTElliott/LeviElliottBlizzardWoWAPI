@@ -24,14 +24,14 @@ const Toon = ({ char }) => {
     </figure>
     <h1>{char.name}</h1>
     <h2>
-      Level {char.level}, {char.race.name}, {char.active_title.name}
+      Level {char.level}, {char.race.name}, {char.character_class.name}
     </h2>
     <div className="row">
         <div className="column">
             <h3> Attributes </h3>
             <div className="stat-group">
-            <div className="stat">class</div>
-              <div className="value"> {char.character_class.name}
+            <div className="stat">Title</div>
+              <div className="value"> {char.active_title.name}
               </div>
               <div className="stat">Realm</div>
               <div className="value"> {char.realm.name}
